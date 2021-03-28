@@ -10,9 +10,9 @@ usr_secret = bdgfudsgisd4  in line no 82 " /router/loginRouters.js"
 
 For checking the User page and Admin page
 
-  Admin page:
-  emailId: Admin1@gmail.com
-  password: Admin@1
+            Admin page:
+            emailId: Admin1@gmail.com
+            password: Admin@1
 
   User page:
   emailId: jaswanth@gmail.com
