@@ -1,6 +1,6 @@
 # Ebook_library_-Hackoonamatata-
 
-we use environmental variables for privacy : 
+We use environmental variables for privacy : 
 
 db_connection = mongodb+srv://pj456:Pj456@cluster0.3kkac.mongodb.net/Online_library?retryWrites=true&w=majority  in line no 12 "index.js"
 
@@ -8,7 +8,8 @@ adm_secret = gudguydfguyd  in line no 54 " /router/loginRouters.js"
 
 usr_secret = bdgfudsgisd4  in line no 82 " /router/loginRouters.js"
 
-for checking the User page and Admin page
+For checking the User page and Admin page
+
   Admin page:
   emailId: Admin1@gmail.com
   password: Admin@1
@@ -19,10 +20,11 @@ for checking the User page and Admin page
 
 
 
-for running the project by using command "npm start"
+For running the project by using command "npm start"
 
 note:
 u have to install this modules 
+
 "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
