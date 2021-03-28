@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+body{
+  background-color: #D7BDE2;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+#loading
+{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('load.gif')
+  no-repeat center;
+  z-index: 99999;
+} 
+section
+{
+  position: relative;
+  width: 100%;
+  height:600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2041&q=80.jpg');
+  background-repeat: no-repeat;
+  background-image: cover;
+  width:100%;
+  height: 100%;
+  border-radius: 0 0 50% 50%/ 0 0 90% 90%;
+  transform: scaleX(1.2);
+}
+section .content
+{
+  position: relative;
+  /* z-index: 1; */
+  margin: auto;
+  
+  
+}
+section .content h1
+{
+  margin: 0;
+  padding: 0;
+  color: #F5EEF8;
+  font-family:  Georgia, sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow: 3px 3px #000;
+}
+
+.topic{
+  font-family: cursive;
+  position:absolute;
+  left:30px;
+}
+.top-grid{
+    display:flex;
+    overflow-x:auto;
+    padding:10px;
+    margin: 10px;
+    align-content: center;
+    text-align: center;
+
+}
+.grid-item:hover
+{
+  box-shadow:  0 10px  10px 2px #117A65;
+  cursor: pointer;
+}
+.i1 img :hover{
+  z-index: 1;
+  transform:scale(1.2);
+}
+.grid-item{
+    position:relative;
+    height:350px;
+    width:300px;
+    font-size: large;
+    margin:30px;
+    margin-left: 40px;
+    border-radius: 10px;
+
+}
+.i1 img{
+    border-radius:10px;
+    width:240px;
+    height: 300px;
+    outline: none;
+}
+.i1{
+    height:310px;
+    width:260px;
+    padding-top:0;
+    padding-left:0;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 0px 2px rgb(0, 0, 0);
+}
+.act{
+    background-color: #fdd42f;
+    color:black;
+}
+ 
+.topic
+{
+  color: #123566;
+  cursor: pointer;
+  font-size: 40px;
+}
+.stars
+{
+  padding: 10px;
+  bottom: 0;
+}
+.checked
+{
+  color: gold;
+}
+
+footer{
+  background-color:  #123566;
+  color:#D4EFDF;
+  font-size: 40px;
+  text-align: center;
+}

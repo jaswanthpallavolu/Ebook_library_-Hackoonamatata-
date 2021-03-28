@@ -1,0 +1,65 @@
+body{
+	background-color : rgb(119, 197, 83);
+}
+.tab-content{
+	position:absolute;
+	top:3%;
+	left:8%;
+}
+#createuser{
+	display: flex;
+	flex-wrap : wrap;
+}
+.B {
+	height: 450px;
+	width: 500px;
+	margin : 120px 0 0 400px;
+	background-color: white;
+	box-shadow: 5px 10px 18px #4d4c4c;
+}
+#createuser form{
+	 
+	padding: 70px 50px 100px 70px;
+	animation : mymove 2s;
+}
+#createuser input{
+	outline: none;
+	border-style: solid;
+	border-width:  1px;
+	width : 240px;
+	height : 50px;
+	background-color: rgb(248, 246, 246);
+}
+#uname {
+	margin : 0 0 20px 61px;
+}
+#email {
+    margin : 0 0 20px 95px; 
+}
+#pwd {
+	margin : 0 0 20px 68px;
+}
+#cpwd {
+	margin : 0 0 20px 8px;
+}
+#createuser button{
+	outline: none;
+	border-style: none;
+	border-width:  1px;
+	background-color: rgb(54, 190, 54);
+	height : 50px;
+    width : 450px;
+}
+#createuser button:active {
+	background-color: #A9DFBF;
+}
+@keyframes mymove { 
+	from {right: -400px; opacity: 0}
+    to {right: 0; opacity: 1;}
+}
+@media (max-width : 1000px) {
+    .B {
+		margin :auto;
+    }
+   
+}

@@ -1,0 +1,43 @@
+.main{
+    margin-top:1%;
+          
+}
+body{
+    background-color: #17202A;
+}
+a{
+    color:white;
+    font-size:20px;
+}
+.details{
+    position:absolute;
+    top:10%;
+    left:40%;
+}
+
+.box1, .box2, .box3, .box4{
+    border-radius: 30px;
+    padding:30px;
+    margin:10px; 
+    width:95%;
+}
+.box1{
+    background-color: #C39BD3;
+}
+.box2{
+    background-color: #5499C7;
+}
+.box3{
+    background-color: #48C9B0;
+}
+.box4{
+    background-color: #F4D03F;
+}
+ 
+img{
+    border-radius: 20px;
+}
+.col-md-6 img{
+    height:230px;
+    
+}

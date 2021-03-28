@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/navbar.css" >
+        <style>
+            body{
+                background-color:#1ABC9C ;
+            }
+            .tables{
+                background-color: #76D7C4;
+               
+                position:absolute;
+                left:20px;
+                top:110px;
+                padding:20px;
+                width:600px;
+                border-radius: 10px;
+                text-align: left;
+            }
+            
+            table{
+                background-color: white;
+                border-radius: 5px;
+            }
+            .side{
+               position:absolute;
+               right:20px;
+               padding-top: 10px;
+               padding-bottom: 10px;
+               border-color: white;
+               border-width: 2px;
+               border-style: solid;
+               border-radius: 15px;
+               background-color: #76D7C4;
+               animation: right 1s; 
+            }
+            @keyframes right{
+                from{right:-300px}
+                to{right:20px}
+            }
+            .side img{
+               width:600px;
+               height:600px;
+               border-radius: 15px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Nav bar -->
+        <nav class="navbar nav navbar-expand-sm navbar-dark fixed-top">
+        <a class="navbar-brand " href="#">ADMIN</a>
+        <ul class="navbar-nav menus">
+            <li class="nav-item "><a class="nav-link" href="/admin/home" >Home</a></li>
+            <li class="nav-item "><a class="nav-link"  href="/admin/books">Books</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/admin/users">users</a></li>
+            
+        
+             <!-- Dropdown -->
+             <li class="nav-item dropdown AA" style="position:absolute;right:10%">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTOkHm3_mPQ5PPRvGtU6Si7FJg8DVDtZ47rw&usqp=CAU">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <%= data.admin %>
+                </a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="/user/logout">logout</a>  
+             </li>
+
+         </ul>  
+        </nav><br><br><br>
+        <!-- /Nav bar-->
+    <div class="container">
+        <div class="row">
+        <div class="tables">
+        <div class="col-md-6">    
+        <div >   
+            <h2>users : </h2>
+            <table class="table  table-stripped table-bordered" style="width:500px">
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0;i < user.length;i++) { %>    
+                <tr>
+                    <td><%= user[i].name %></td>
+                    <td><%= user[i].email %></td>  
+                </tr>
+                <% } %>
+                </tbody>
+            </table> 
+
+
+            <br>
+         
+        </div></div></div>
+        <div class="side">
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Ym9va3N8ZW58MHwxfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+        </div></div>
+      </div>
+
+       
+    </div>
+    </body>
+</html>

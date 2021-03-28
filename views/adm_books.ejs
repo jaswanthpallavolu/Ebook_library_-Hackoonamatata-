@@ -1,0 +1,128 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/Books.css">
+        <link rel="stylesheet" href="/css/navbar.css" >
+    </head>
+    <body>
+         <!-- Nav bar -->
+    <nav class="navbar nav navbar-expand-sm navbar-dark fixed-top">
+        <a class="navbar-brand " href="#">ADMIN</a>
+        <ul class="navbar-nav menus">
+            <li class="nav-item "><a class="nav-link" href="/admin/home" >Home</a></li>
+            <li class="nav-item active"><a class="nav-link"  href="/admin/books">Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/users">users</a></li>
+            
+            <!-- Dropdown -->
+            <li class="nav-item dropdown AA" style="position:absolute;right:10%">
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw968wL7v20Jb-uguDDGpTDE-pq_hj-To__g&usqp=CAU"> -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTOkHm3_mPQ5PPRvGtU6Si7FJg8DVDtZ47rw&usqp=CAU">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <%= data.admin %> 
+                </a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="/user/logout">logout</a>  
+            </li>
+         
+         
+             
+        </ul>  
+</nav><br><br><br><br>
+<!-- /Nav bar-->
+
+    <div class="container-fluid">
+        <h3>All Books in the database : </h3>
+
+        <!-- add button-->
+        <button class="add" id="add" href="">+</button>
+
+        <!-- View Books -->
+        <div class="container-fluid">
+            <% 
+                
+                var len = books.length
+                var n= Math.ceil(len/4);
+             for (var i=1 ;i<=n; i++) { %>
+            <div class="top-grid">
+                
+                    <%
+                    var ini = ((i-1)*4)
+                    if (i==n)
+                    {
+                        var fin = len-1;
+                    }
+                    else
+                    {
+                        var fin = (i*4)-1
+                    }
+                  for (var j=ini ; j<=fin ;j++) { %>
+                 
+                <div class="grid-item">   
+                    <div class="i1"><a href="/admin/books/<%= books[j]._id %>"><img src="<%= books[j].url %>"></a></div>   
+                </div>
+                <p><button class="delete" data-id="<%= books[j]._id%>">X</button></p>  
+                <!-- stars script -->
+                
+                <% } %>
+                
+                 
+            </div>
+
+            <% } %>
+
+        </div>
+        <!-- /View Books -->
+
+        <!-- Adding books -->
+        <div class="bg-modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <h1>Adding Books</h1>
+                <form action="/admin/books" method="POST">
+                    <input type="text" name ="name" placeholder="Book Name" required>
+                    <input type="text" name="url" placeholder="Book Link" required>
+                    <button class="submit">ADD</a>
+                </form>
+            </div>
+        </div>
+         
+        <!-- /Adding books -->
+
+         
+    </div>
+    <script>
+        document.getElementById('add').addEventListener('click',function(){
+            document.querySelector('.bg-modal').style.display='flex';
+        });
+
+        document.querySelector('.close').addEventListener('click',function(){
+            document.querySelector('.bg-modal').style.display='none';
+        });
+
+        $(document).ready(function(){
+             
+            $(".delete").each(function(){
+                 
+                $(this).click(function(){
+                    var id = $(this).attr("data-id")
+                    var request = {
+                        "url" : `http://localhost:8000/admin/books/${id}`,
+                        "method" : "DELETE"
+                    }
+            
+                    if(confirm("Do you really want to delete this record?")){
+                        $.ajax(request).done(function(response){
+                            alert("Data Deleted Successfully!");
+                            location.reload();
+                        })
+                    }
+            
+                     
+                })
+                 
+            });
+        });
+         
+    </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>login</title> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <br>
+        <div class="container-fluid">
+            <a href="/" style="font-size: 20px; color: black;"><button ><< Back</button></a><br> <br>
+            <% if(created) { %>
+                <div class="alert alert-success" style="width:260px;">
+                    <strong>Account created Successfully </strong>  
+                </div>
+            <% } %>   
+            <% if(loggedout) { %>
+                <div class="alert alert-success" style="width:230px;">
+                    <strong> loggedOut Successfully </strong>  
+                </div>
+            <% } %>
+            <% if(email) { %>
+                <div class="alert alert-danger" style="width:280px;">
+                    <strong>email or password is incorrect</strong>  
+                </div>
+            <% } %>
+            <% if(pswd) { %>
+                <div class="alert alert-danger" style="width:230px;">
+                    <strong>Invalid password</strong>  
+                </div>
+            <% } %>            
+        <!-- Nav tabs -->
+        
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#userlogin">User</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#adminlogin">Admin</a>
+            </li>
+        </ul>
+    
+        <br><br>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane container  active" id="userlogin">
+                <div class=B>
+                <form action="/login/usrlog" method="POST">
+                    <input type="text"  name="email" placeholder="Enter User Email_Id"><br><br>
+                    <input type="password" name="pswd" placeholder="Enter Password"><br><br>
+                    <Button type="submit">LOGIN</Button>
+                    <p>Not Registered ? <a href="/Uregister" style="color: rgb(54, 190, 54);">Create an Account</a></p>
+                </form>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="adminlogin">
+                <div class=B1>
+                <form action="/login/admlog" method="POST">
+                    <input type="text" name="email" placeholder="Enter Admin Email_Id"><br><br>
+                    <input type="password" name="pswd" placeholder="Enter Password"><br><br>
+                    <Button type="submit">LOGIN</Button>
+                </form>
+                </div>
+            </div>
+           
+        </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/adm_home.css">
+    </head>
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar nav navbar-expand-sm navbar-dark fixed-top">
+            <a class="navbar-brand " href="#">ADMIN</a>
+            <ul class="navbar-nav menus">
+                <li class="nav-item active"><a class="nav-link" href="/admin/home" >Home</a></li>
+                <li class="nav-item"><a class="nav-link"  href="/admin/books">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/users">users</a></li>
+                
+            
+             
+            <!-- Dropdown -->
+            <li class="nav-item dropdown AA" style="position:absolute; right:10%;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTOkHm3_mPQ5PPRvGtU6Si7FJg8DVDtZ47rw&usqp=CAU">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <%= data.admin %>
+                </a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="/admin/home/logout">logout</a>
+                
+                 
+            </li></ul>  
+    </nav><br><br><br>
+    <!-- /Nav bar-->
+
+    <div class="container-fluid">
+        <h1>Ebook Library</h1>
+        <div class="homelogo">
+            
+        </div>   
+    </div>
+    <br>
+    <footer>&copy; Project done by IIITK Students</footer> 
+</body>   
+</html> 

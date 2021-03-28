@@ -1,0 +1,26 @@
+.homelogo
+{
+    background: url('https://lmsone.iiitkottayam.ac.in/pluginfile.php/1/theme_adaptable/p1/1612429101/DSC_0967.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 30px;
+    width: 100%;
+    height: 82%;
+}
+body{
+    text-align: center;
+    background-color: #D4EFDF;
+}
+h1
+{
+    
+    color: #0B5345;
+    margin:3%;
+    font-size: 100px;
+}
+footer{
+    background-color: #0B5345;
+    color:#D4EFDF;
+    font-size: 40px;
+}
+ 

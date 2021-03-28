@@ -1,0 +1,86 @@
+<html>
+<head><title>Book Page</title>
+  <link rel="stylesheet" href="/css/book.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body onload="myFunc()">
+  <div id="loading"></div>
+  <br><br>
+  <div class="container-fluid">
+     <a href="/user" class="back"><button><< back</button></a> <br><br>
+
+    <div class="card">
+    <div class= "row">
+        <div class="col-md-7">
+          <div class="content">
+          <!--Title-->
+          <h1><%= book.name %></h1>
+          <!-- content -->
+          <p>Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. The Alchemist follows the journey of an Andalusian shepherd boy named Santiago.</p>
+          <!-- /content --> 
+          </div>
+          <br>
+          <div class="">
+            <% if (user_book!=null)
+            {    %>
+            <input type="button" class="dis-btn" value="Owned" disabled>
+           <% }
+             else
+             {  %>
+              <input type="button" id="bt1" class="get-btn" value="Get" data-id="<%= book._id %>" >
+            <% } %>
+           
+          </div>
+        </div>
+        
+      
+        <div class="bookimg">
+        
+          <img class="card-img" src="<%= book.url %>" >
+          <div class="starsbk">
+            <span class="fa fa-star fa-2x checked" id=star1></span>
+            <span class="fa fa-star fa-2x checked" id=star2></span>
+            <span class="fa fa-star fa-2x checked" id=star3></span>
+            <span class="fa fa-star fa-2x" id=star4></span>
+            <span class="fa fa-star fa-2x" id=star5></span>
+          </div>
+      </div>
+  
+</div></div>
+<script>
+    var load=document.getElementById('loading');
+  function myFunc(){
+    load.style.display='none';
+  }
+
+   $(document).ready(function() { 
+            $("#bt1").click(function() { 
+                 
+              var id = $(this).attr("data-id")
+
+              var request = {
+                  "url" : `http://localhost:8000/user/book/${id}`,
+                  "method" : "POST"
+              }
+      
+              if(confirm("Do you really want to get this Book?")){
+                  $.ajax(request).done(function(response){
+                      alert("Book Added Successfully!");
+                       
+                  })
+                }
+                
+
+                  $("#bt1").prop("value", "Owned");
+                   $(this).prop("disabled", "true");
+                   $(this).prop("class" ,"dis-btn")
+               
+                
+            }); 
+        }); 
+ 
+
+</script>
+</body>
+</html>
