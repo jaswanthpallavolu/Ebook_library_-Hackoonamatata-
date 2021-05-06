@@ -22,23 +22,3 @@ For checking the User page and Admin page
 
 For running the project by using command "npm start"
 
-note:
-u have to install this modules 
-
-            "dependencies": {
-                "axios": "^0.21.1",
-                "bcrypt": "^5.0.1",
-                "body-parser": "^1.19.0",
-                "cookie-parser": "^1.4.5",
-                "dotenv": "^8.2.0",
-                "ejs": "^3.1.6",
-                "ejs-mate": "^3.0.0",
-                "express": "^4.17.1",
-                "express-ejs-layouts": "^2.5.0",
-                "http": "0.0.1-security",
-                "jsonwebtoken": "^8.5.1",
-                "mongoose": "^5.12.1",
-                "nodemon": "^2.0.7",
-                "path": "^0.12.7"
-              }
-  
