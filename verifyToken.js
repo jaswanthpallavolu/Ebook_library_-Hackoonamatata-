@@ -4,7 +4,6 @@ module.exports.verifyAdmin = (req,res,next) => {
     //get authcookie from request
     const authcookie = req.cookies['adm-token']
     //console.log(authcookie);
-
     if (authcookie == (null ||undefined )) return  res.redirect('/');
     jwt.verify(authcookie, process.env.adm_secret, (err, data) => {
         if (err) {
@@ -19,8 +18,6 @@ module.exports.verifyAdmin = (req,res,next) => {
             req.admin = data;
             next()
         }
-        
-       
     })
 }
 

@@ -3,13 +3,14 @@ const http=require("http");
 const bodyParser = require('body-parser');
 const axios=require("axios");
 const mongoose=require('mongoose');
-
 const cp = require('cookie-parser');
-
+// view engine setup
+const expresslayouts = require('express-ejs-layouts');
 require('dotenv').config();
 
 // environment variable db_connection used 
-const connect = mongoose.connect(process.env.db_connection,{useNewUrlParser: true,useUnifiedTopology: true});
+const connect = mongoose.connect(process.env.db_connection,
+    {useNewUrlParser: true,useUnifiedTopology: true});
 
 connect.then((db) => {
     console.log('Connected correctly to server');
@@ -21,16 +22,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cp());
-
-// view engine setup
-const expresslayouts = require('express-ejs-layouts');
-const { dirname } = require("path");
 app.use(expresslayouts);
 app.set("view engine", "ejs");
 
 //default layout
 app.set('layout','./layout/admin_layout.ejs');
- 
 app.use(express.static(__dirname + '/public/'));
 // app.use(express.static(__dirname + '/public/css'));
 // app.use(express.static(__dirname + '/public/html'));
@@ -54,19 +50,13 @@ app.get("/",(req,res)=>{
     res.sendFile(__dirname + '/public/html/Homepage.html')
 });
  
-
 //registration
 app.get('/Uregister',(req,res)=>{
     res.render('regform');
 })
- //cookie parser
-
-
-
+ 
 const port= process.env.PORT || 8000;
-
 const server=http.createServer(app);
-
-app.listen(port,()=>{console.log('server running')})
+server.listen(port,()=>{console.log('server running')})
 
   

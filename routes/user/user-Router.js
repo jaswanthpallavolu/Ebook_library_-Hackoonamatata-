@@ -90,10 +90,8 @@ user_Router.route("/book/:bId")
                  }
                 })
                 .catch((err)=>{
-                      console.log(err);       });
-        
-           
-             
+                      console.log(err); 
+                    });
         }
         
     })
@@ -130,11 +128,6 @@ user_Router.route("/book/:bId")
               else {
                    console.log("user not found");
                }
-
-
-
-
-
             })
          
         }
@@ -150,7 +143,6 @@ user_Router.route("/owned")
     const authcookie = req.cookies['usr-token']
     jwt.verify(authcookie, process.env.usr_secret, (err, data) => {
         if (err) {
-             
             res.data = data;
         }
         else{

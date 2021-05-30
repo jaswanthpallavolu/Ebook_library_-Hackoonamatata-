@@ -1,7 +1,6 @@
 const express=require('express');
 const app1 = express();
 const bodyParser = require('body-parser');
-
 const homeRouter = express.Router();
  
  

@@ -39,12 +39,10 @@
         <!-- View Books -->
         <div class="container-fluid">
             <% 
-                
                 var len = books.length
                 var n= Math.ceil(len/4);
              for (var i=1 ;i<=n; i++) { %>
             <div class="top-grid">
-                
                     <%
                     var ini = ((i-1)*4)
                     if (i==n)
@@ -61,11 +59,8 @@
                     <div class="i1"><a href="/admin/books/<%= books[j]._id %>"><img src="<%= books[j].url %>"></a></div>   
                 </div>
                 <p><button class="delete" data-id="<%= books[j]._id%>">X</button></p>  
-                <!-- stars script -->
-                
                 <% } %>
-                
-                 
+   
             </div>
 
             <% } %>
@@ -100,24 +95,20 @@
         });
 
         $(document).ready(function(){
-             
             $(".delete").each(function(){
-                 
+                    
                 $(this).click(function(){
                     var id = $(this).attr("data-id")
                     var request = {
                         "url" : `http://localhost:8000/admin/books/${id}`,
                         "method" : "DELETE"
                     }
-            
                     if(confirm("Do you really want to delete this record?")){
                         $.ajax(request).done(function(response){
                             alert("Data Deleted Successfully!");
                             location.reload();
                         })
                     }
-            
-                     
                 })
                  
             });

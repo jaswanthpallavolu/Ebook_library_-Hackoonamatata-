@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const express = require('express');
 const regRouter = express();
 const bcrypt = require('bcrypt');
@@ -12,7 +11,6 @@ regRouter.route('/')
         //check email exists or not
         const emailExists = await user.findOne({email:req.body.email});
         if (emailExists) return res.send('email exists already ');
-
         if (req.body.password != req.body.confirm) return res.send('passwords not matched')
 
         //hash password
